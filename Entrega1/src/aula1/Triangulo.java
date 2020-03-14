@@ -19,12 +19,13 @@ public class Triangulo extends Poligono {
 		// TODO Auto-generated method stub
 		return  (0.5 * (Math.pow(base/2,2)) + (Math.pow(altura,2))) + base;
 	}
-	
-	public String toString() {
-				return "******TRIANGULO******"
-			   +"\n Área: " + area()
-			   +"\n Perímetro:" + (perimetro())
-			   +"\n";
 
-}
+	public String toString() {
+		return "******TRIANGULO******"
+				+"\n Área: " + area()
+				+"\n Perímetro:" + (perimetro())
+				+"\n"
+				+"\n";
+
+	}
 }

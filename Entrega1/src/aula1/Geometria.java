@@ -6,12 +6,13 @@ public class Geometria {
 
 		ArrayList<Figura> figuras = new ArrayList<>();
 
-		figuras.add(new Circulo(3));
-		figuras.add(new Losango(3,3));
-		figuras.add(new Retangulo(5,3));
-		figuras.add(new Quadrado(2,2));
+		
+		figuras.add(new Losango(3,3));		
 		figuras.add(new Triangulo(3,3));
 		figuras.add(new Trapezio(3,2,2));
+		figuras.add(new Circulo(3));
+		figuras.add(new Retangulo(5,3));		
+		figuras.add(new Quadrado(2,2));
 
 		for (Figura figura : figuras) {
 					

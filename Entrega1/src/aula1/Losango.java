@@ -18,6 +18,12 @@ public class Losango extends Poligono{
 		// TODO Auto-generated method stub
 		return (2 * base ) + (2 * altura);
 	}
+	
+	public String toString() {
+	return "\n******LOSANGO******"
+	   +"\n Área: " + area()	   
+	   +"\n Perímetro:" + (perimetro())
+	   +"\n";
 
-
+}
 }

@@ -26,11 +26,12 @@ public class Trapezio extends Figura{
 		return baseMaior + base + altura + altura;
 	}
 
-	
+
 	public String toString() {			
 		return "******TRAPÉZIO******"
-			   +"\n Área: " + area()
-			   +"\n Perímetro:" + (perimetro())
-			   +"\n";
+				+"\n Área: " + area()
+				+"\n Perímetro:" + (perimetro())
+				+"\n"
+				+"\n";
 	}
 }
