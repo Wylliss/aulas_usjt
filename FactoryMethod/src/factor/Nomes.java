@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Nomes {
 	List<Nome> nomes;
-	
+
 	public Nomes(String[] lista) {
 		nomes = new ArrayList<>();
 		processar(lista);
@@ -26,7 +26,7 @@ public class Nomes {
 			} else {
 				an = new ArmazemNomesDesvirgulados(nomes);
 			}
-			nomes = an.armazenar(item);
+			nomes = an.armazenar(item); 
 		}
 	}
 

@@ -23,6 +23,7 @@ public class Losango extends Poligono{
 	return "\n******LOSANGO******"
 	   +"\n Área: " + area()	   
 	   +"\n Perímetro:" + (perimetro())
+	   +"\n"
 	   +"\n";
 
 }

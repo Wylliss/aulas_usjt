@@ -13,6 +13,9 @@ public class Geometria {
 		figuras.add(new Circulo(3));
 		figuras.add(new Retangulo(5,3));		
 		figuras.add(new Quadrado(2,2));
+		figuras.add(new Cubo(2,2));
+		figuras.add(new Esfera(3));
+		figuras.add(new Piramide(3,3));
 
 		for (Figura figura : figuras) {
 					
