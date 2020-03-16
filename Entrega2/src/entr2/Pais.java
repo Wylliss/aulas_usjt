@@ -1,17 +1,17 @@
 package entr2;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public class Pais {	
 	private int id;
 	private String nome;
-	private long populacao;
-	private double area;
+	private String populacao;
+	private String area;
 
 	static {
 		try {
@@ -25,7 +25,7 @@ public class Pais {
 	}
 
 
-	public Pais(int id, String nome, long populacao, double area) {
+	public Pais(int id, String nome, String populacao, String area) {
 		this.id = id;
 		this.nome = nome;
 		this.populacao = populacao;
@@ -49,19 +49,19 @@ public class Pais {
 		this.nome = nome;
 	}
 
-	public long getPopulacao() {
+	public String getPopulacao() {
 		return populacao;
 	}
 
-	public void setPopulacao(long populacao) {
+	public void setPopulacao(String populacao) {
 		this.populacao = populacao;
 	}
 
-	public double getArea() {
+	public String getArea() {
 		return area;
 	}
 
-	public void setArea(double area) {
+	public void setArea(String area) {
 		this.area = area;
 	} 
 
@@ -75,12 +75,11 @@ public class Pais {
 
 	public void criar() {
 		String sqlInsert = "INSERT INTO pais(nome, populacao, area) VALUES (?, ?, ?)";
-		// usando o try with resources do Java 7, que fecha o que abriu
 		try (Connection conn = obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
 			stm.setString(1, getNome());
-			stm.setLong(2, getPopulacao());
-			stm.setDouble(3, getArea());
+			stm.setString(2, getPopulacao());
+			stm.setString(3, getArea());
 			stm.execute();
 			String sqlQuery  = "SELECT LAST_INSERT_ID()";
 			try(PreparedStatement stm2 = conn.prepareStatement(sqlQuery);
@@ -102,8 +101,8 @@ public class Pais {
 		try (Connection conn = obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
 			stm.setString(1, getNome());
-			stm.setLong(2, getPopulacao());
-			stm.setDouble(3, getArea());
+			stm.setString(2, getPopulacao());
+			stm.setString(3, getArea());
 			stm.setInt(4, getId());
 			stm.execute();
 		} catch (Exception e) {
@@ -132,13 +131,13 @@ public class Pais {
 			try (ResultSet rs = stm.executeQuery();) {
 				if (rs.next()) {
 					setNome(rs.getString("nome"));
-					setPopulacao(rs.getLong("populacao"));
-					setArea(rs.getDouble("area"));
+					setPopulacao(rs.getString("populacao"));
+					setArea(rs.getString("area"));
 				} else {
 					setId(-1);
 					setNome(null);
-					setPopulacao(0);
-					setArea(0);
+					setPopulacao(null);
+					setArea(null);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -148,22 +147,40 @@ public class Pais {
 		}
 	}
 
-	
+
 
 	public void maiorPopulacao() {		
 		String sqlSelect  = "SELECT nome from pais order by populacao desc limit 1";
-         System.out.println(sqlSelect);      
+		try (Connection conn = obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setInt(1, getId());
+			try (ResultSet rs = stm.executeQuery();) {
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}    
 	}
 
 
 	public void menorArea() {		
 		String sqlSelect  = "SELECT nome from pais order by area limit 1;";
-         System.out.println(sqlSelect);      
+		try (Connection conn = obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}     
 	}
 
 
 
-	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -172,16 +189,16 @@ public class Pais {
 		if (getClass() != obj.getClass())
 			return false;
 		Pais other = (Pais) obj;
-		//if (email == null) {
-		//	if (other.email != null)
-		//		return false;
-		//} else if (!email.equals(other.email))
-		//	return false;
-		//if (fone == null) {
-		//	if (other.fone != null)
-		//		return false;
-		//} else if (!fone.equals(other.fone))
-		//	return false;
+		if (area == null) {
+			if (other.area != null)
+				return false;
+		} else if (!area.equals(other.area))
+			return false;
+		if (populacao == null) {
+			if (other.populacao != null)
+				return false;
+		} else if (!populacao.equals(other.populacao))
+			return false;
 		if (id != other.id)
 			return false;
 		if (nome == null) {
@@ -191,7 +208,6 @@ public class Pais {
 			return false;
 		return true;
 	}
-
 
 }
 

@@ -25,8 +25,8 @@ public class PaisTest {
 	@Before
 	public void setUp() throws Exception {
 		System.out.println("setup");
-		pais = new Pais(id, "Brasil", 201032714, 8515049);
-		copia = new Pais(id, "Brasil", 201032714, 8515049);
+		pais = new Pais(id, "Brasil", "201032714", "8515049");
+		copia = new Pais(id, "Brasil", "201032714", "8515049");
 		System.out.println(pais);
 		System.out.println(copia);
 		System.out.println(id);
@@ -36,8 +36,8 @@ public class PaisTest {
 	public void test00Carregar() {
 		System.out.println("carregar");
 		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		Pais fixture = new Pais(id, "Brasil", 201032714, 8515049);
-		Pais novo = new Pais (id,  null , 0  , 0);
+		Pais fixture = new Pais(id, "Brasil", "201032714", "8515049");
+		Pais novo = new Pais (id,  null , null  , null);
 		novo.carregar();
 		assertEquals("testa inclusao", novo, fixture);
 	}
@@ -55,8 +55,8 @@ public class PaisTest {
 	@Test
 	public void test02Atualizar() {
 		System.out.println("atualizar");
-		pais.setPopulacao(999999);
-		copia.setPopulacao(999999);		
+		pais.setPopulacao("999999");
+		copia.setPopulacao("999999");		
 		pais.atualizar();
 		pais.carregar();
 		assertEquals("testa atualizacao", pais, copia);
@@ -67,8 +67,8 @@ public class PaisTest {
 		System.out.println("excluir");
 		copia.setId(-1);
 		copia.setNome(null);
-		copia.setPopulacao(0);
-		copia.setArea(0);
+		copia.setPopulacao(null);
+		copia.setArea(null);
 		pais.excluir();
 		pais.carregar();
 		assertEquals("testa exclusao", pais, copia);
