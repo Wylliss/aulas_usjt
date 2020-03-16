@@ -1,4 +1,4 @@
-package model;
+package entr2;
 
 
 import static org.junit.Assert.assertEquals;
@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ClienteTest {
-	Cliente cliente, copia;
+public class PaisTest {
+	Pais pais, copia;
 	static int id = 0;
 
 	/*
@@ -25,9 +25,9 @@ public class ClienteTest {
 	@Before
 	public void setUp() throws Exception {
 		System.out.println("setup");
-		cliente = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br" );
-		copia = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br" );
-		System.out.println(cliente);
+		pais = new Pais(id, "Brasil", 201032714, 8515049);
+		copia = new Pais(id, "Brasil", 201032714, 8515049);
+		System.out.println(pais);
 		System.out.println(copia);
 		System.out.println(id);
 	}
@@ -36,30 +36,30 @@ public class ClienteTest {
 	public void test00Carregar() {
 		System.out.println("carregar");
 		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		Cliente fixture = new Cliente(1, "Carlos Drummond de Andrade", "(11) 91234-4321", "cda@usjt.br" );
-		Cliente novo = new Cliente(1, null, null, null);
-		novo.carregar();
-		assertEquals("testa inclusao", novo, fixture);
+		//Pais fixture = new Pais(id, "Brasil", 201032714, 8515049);
+	   // Pais novo = new Pais (id, null, null, null);
+		//novo.carregar();
+		//assertEquals("testa inclusao", novo, fixture);
 	}
 
 	@Test
 	public void test01Criar() {
 		System.out.println("criar");
-		cliente.criar();
-		id = cliente.getId();
+		pais.criar();
+		id = pais.getId();
 		System.out.println(id);
 		copia.setId(id);
-		assertEquals("testa criacao", cliente, copia);
+		assertEquals("testa criacao", pais, copia);
 	}
 
 	@Test
 	public void test02Atualizar() {
 		System.out.println("atualizar");
-		cliente.setFone("999999");
-		copia.setFone("999999");		
-		cliente.atualizar();
-		cliente.carregar();
-		assertEquals("testa atualizacao", cliente, copia);
+		pais.setPopulacao(999999);
+		copia.setPopulacao(999999);		
+		pais.atualizar();
+		pais.carregar();
+		assertEquals("testa atualizacao", pais, copia);
 	}
 
 	@Test
@@ -67,10 +67,10 @@ public class ClienteTest {
 		System.out.println("excluir");
 		copia.setId(-1);
 		copia.setNome(null);
-		copia.setFone(null);
-		copia.setEmail(null);
-		cliente.excluir();
-		cliente.carregar();
-		assertEquals("testa exclusao", cliente, copia);
+		copia.setPopulacao(0);
+		copia.setArea(0);
+		pais.excluir();
+		pais.carregar();
+		assertEquals("testa exclusao", pais, copia);
 	}
 }
