@@ -148,7 +148,18 @@ public class Pais {
 		}
 	}
 
+	
 
+	public void maiorPopulacao() {		
+		String sqlSelect  = "SELECT nome from pais order by populacao desc limit 1";
+         System.out.println(sqlSelect);      
+	}
+
+
+	public void menorArea() {		
+		String sqlSelect  = "SELECT nome from pais order by area limit 1;";
+         System.out.println(sqlSelect);      
+	}
 
 
 
@@ -160,7 +171,7 @@ public class Pais {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		 Pais other = (Pais) obj;
+		Pais other = (Pais) obj;
 		//if (email == null) {
 		//	if (other.email != null)
 		//		return false;
@@ -181,7 +192,7 @@ public class Pais {
 		return true;
 	}
 
-		
+
 }
 
 

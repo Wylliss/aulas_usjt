@@ -8,6 +8,7 @@ public class Programa {
 		if(args.length == 0) {
 			args = lista;
 		}
+		@SuppressWarnings("unused")
 		Nomes nomes = new Nomes(args);
 	}
 

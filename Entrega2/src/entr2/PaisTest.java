@@ -36,10 +36,10 @@ public class PaisTest {
 	public void test00Carregar() {
 		System.out.println("carregar");
 		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		//Pais fixture = new Pais(id, "Brasil", 201032714, 8515049);
-	   // Pais novo = new Pais (id, null, null, null);
-		//novo.carregar();
-		//assertEquals("testa inclusao", novo, fixture);
+		Pais fixture = new Pais(id, "Brasil", 201032714, 8515049);
+		Pais novo = new Pais (id,  null , 0  , 0);
+		novo.carregar();
+		assertEquals("testa inclusao", novo, fixture);
 	}
 
 	@Test
@@ -72,5 +72,20 @@ public class PaisTest {
 		pais.excluir();
 		pais.carregar();
 		assertEquals("testa exclusao", pais, copia);
+
+	}
+
+	@Test
+	public void test04maiorPopulacao() {
+		System.out.println("Maior População");
+		pais.maiorPopulacao();		
+	}
+
+
+	@Test
+	public void test05menorArea() {	
+		System.out.println("Menor Area");
+		pais.menorArea();			
+
 	}
 }
