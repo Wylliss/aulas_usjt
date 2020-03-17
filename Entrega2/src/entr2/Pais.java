@@ -77,7 +77,7 @@ public class Pais {
 		String sqlInsert = "INSERT INTO pais(nome, populacao, area) VALUES (?, ?, ?)";
 		try (Connection conn = obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
-			stm.setString(1, getNome());
+			stm.setString(1, getNome()); 
 			stm.setString(2, getPopulacao());
 			stm.setString(3, getArea());
 			stm.execute();
