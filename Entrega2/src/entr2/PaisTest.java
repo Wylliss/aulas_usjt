@@ -1,91 +1,60 @@
 package entr2;
 
-
-import static org.junit.Assert.assertEquals;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class PaisTest {
 	Pais pais, copia;
 	static int id = 0;
 
-	/*
-	 * Antes de rodar este teste, certifique-se que nao ha no banco nenhuma
-	 * linha com o id igual ao do escolhido para o to instanciado abaixo. Se
-	 * houver, delete. 
-	 * Certifique-se tambÃ©m que sobrecarregou o equals na classe
-	 * Cliente. 
-	 * Certifique-se que a fixture cliente1 foi criada no banco.
-	 * AlÃ©m disso, a ordem de execuÃ§Ã£o dos testes Ã© importante; por
-	 * isso a anotaÃ§Ã£o FixMethodOrder logo acima do nome desta classe
-	 */
-	@Before
-	public void setUp() throws Exception {
-		System.out.println("setup");
-		pais = new Pais(id, "Brasil", "201032714", "8515049");
-		copia = new Pais(id, "Brasil", "201032714", "8515049");
-		System.out.println(pais);
-		System.out.println(copia);
-		System.out.println(id);
+
+	@Test
+	public void test00Criar() {
+		System.out.println("Inserir novo país");
+		Pais pais = new Pais(0, "Espanha", 46524943L, 504030.0);
+		PaisDAO.criar(pais);
+		System.out.println("País Inserido com sucesso\n");
 	}
 
 	@Test
-	public void test00Carregar() {
-		System.out.println("carregar");
-		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		Pais fixture = new Pais(id, "Brasil", "201032714", "8515049");
-		Pais novo = new Pais (id,  null , null  , null);
-		novo.carregar();
-		assertEquals("testa inclusao", novo, fixture);
-	}
-
-	@Test
-	public void test01Criar() {
-		System.out.println("criar");
-		pais.criar();
-		id = pais.getId();
-		System.out.println(id);
-		copia.setId(id);
-		assertEquals("testa criacao", pais, copia);
-	}
-
-	@Test
-	public void test02Atualizar() {
-		System.out.println("atualizar");
-		pais.setPopulacao("999999");
-		copia.setPopulacao("999999");		
-		pais.atualizar();
-		pais.carregar();
-		assertEquals("testa atualizacao", pais, copia);
-	}
-
-	@Test
-	public void test03Excluir() {
-		System.out.println("excluir");
-		copia.setId(-1);
-		copia.setNome(null);
-		copia.setPopulacao(null);
-		copia.setArea(null);
-		pais.excluir();
-		pais.carregar();
-		assertEquals("testa exclusao", pais, copia);
-
-	}
-
-	@Test
-	public void test04maiorPopulacao() {
-		System.out.println("Maior População");
-		pais.maiorPopulacao();		
+	public void test01Carregar() {
+		System.out.println("carregar país com id 1");
+		System.out.println(PaisDAO.carregar(1) +"\n");
 	}
 
 
 	@Test
-	public void test05menorArea() {	
-		System.out.println("Menor Area");
-		pais.menorArea();			
-
+	public void test03Excluir() {
+		System.out.println("excluir país com id 1");	
+		PaisDAO.excluir(10);		
+		System.out.println("exclusão de país realizada com sucesso\n");
 	}
+
+
+	@Test
+	public void test04Vetor() {
+		System.out.println("Verificar 3 primeiros países da tabela por Vetor");
+		Pais[] vetor = PaisDAO.Vetor();
+		for (Pais pais : vetor) {
+			System.out.println(pais + "\n");
+		}
+	}
+	@Test
+	public void test05areaMenor() {		
+		System.out.println("Verificar país com menor area");
+		System.out.println(PaisDAO.areaMenor() +"\n");
+		
+	}
+	
+	@Test
+	public void test05maiorPopulacao() {		
+		System.out.println("Verificar país com maior Populacao");
+		System.out.println(PaisDAO.maiorPopulacao() +"\n");
+	}
+	
 }
+
+
