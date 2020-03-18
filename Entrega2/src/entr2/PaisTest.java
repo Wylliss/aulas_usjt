@@ -50,7 +50,7 @@ public class PaisTest {
 	}
 	
 	@Test
-	public void test05maiorPopulacao() {		
+	public void test06maiorPopulacao() {		
 		System.out.println("Verificar país com maior Populacao");
 		System.out.println(PaisDAO.maiorPopulacao() +"\n");
 	}

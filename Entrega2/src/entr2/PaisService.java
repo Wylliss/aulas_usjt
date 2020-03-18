@@ -7,12 +7,12 @@ public class PaisService {
 	
 	@SuppressWarnings({ "rawtypes" })
 	public ArrayList getPaisMaisHab() {
-		return PaisDAO.buscaPaisMaisHab();	
+		return PaisDAO.maiorPopulacao();	
 	}
 	
 	@SuppressWarnings("rawtypes")
 	public ArrayList getPaisMenor() {
-		return PaisDAO.buscaPaisMenor();	
+		return PaisDAO.areaMenor();	
 	}
 	
 
