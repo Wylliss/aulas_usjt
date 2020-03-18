@@ -12,7 +12,7 @@ public class PaisTest {
 
 
 	@Test
-	public void test00Criar() {
+	public void test01Criar() {
 		System.out.println("Inserir novo país");
 		Pais pais = new Pais(0, "Espanha", 46524943L, 504030.0);
 		PaisDAO.criar(pais);
@@ -20,7 +20,7 @@ public class PaisTest {
 	}
 
 	@Test
-	public void test01Carregar() {
+	public void test02Carregar() {
 		System.out.println("carregar país com id 1");
 		System.out.println(PaisDAO.carregar(1) +"\n");
 	}
