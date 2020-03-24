@@ -1,0 +1,14 @@
+package entrega2_abstract_factory;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TesteImpressaoTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

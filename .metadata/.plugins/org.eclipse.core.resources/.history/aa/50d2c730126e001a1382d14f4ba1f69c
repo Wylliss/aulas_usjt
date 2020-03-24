@@ -1,0 +1,13 @@
+package entrega2_abstract_factory;
+
+import emtrega2_singleton.Incremental;
+
+public class TesteIncremental {
+	public static void main (String [] args) {
+		for (int i = 0; i < 10; i++) {
+			Incremental inc = new Incremental ();
+			System.out.println(inc);
+		}
+	}
+
+}
