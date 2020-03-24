@@ -16,12 +16,12 @@ public class Cliente {
 	private Pizzaiolo pizzaiolo;
 	private Date data;
 
-	public Cliente (Date data) {
-		this.data = data;
+	public Cliente (java.util.Date data2) {
+		this.data = (Date) data2;
 
 
 		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(data);
+		calendar.setTime(data2);
 		int diaSemana = calendar.get(DAY_OF_WEEK);
 
 		switch (diaSemana) {
