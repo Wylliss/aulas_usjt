@@ -1,0 +1,60 @@
+package entr2;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
+public class PaisTest {
+	Pais pais, copia;
+	static int id = 0;
+
+	
+	@Test
+	public void test00Criar() {
+		System.out.println("Inserir Pais");
+		Pais pais = new Pais(100, "Espanha", 46524943L, 504030.0);
+		PaisDAO.criar(pais);
+		System.out.println("Pais Inserido com sucesso");
+	}
+	
+	@Test
+	public void test01Carregar() {
+		System.out.println("carregar Pais");
+		System.out.println(PaisDAO.carregar(100));
+	}
+
+
+	@Test
+	public void test02Atualizar() {
+		System.out.println("atualizar");			
+		PaisDAO.atualizar(10, "EspanhaEURO", 46524943L, 504030.0);
+		System.out.println(PaisDAO.carregar(0));
+		
+	}
+
+	
+	@Test
+	public void test03Excluir() {
+		System.out.println("excluir o pais Inserido");	
+		PaisDAO.excluir(10);
+		assertEquals("testa exclusao", pais, copia);
+	}
+	
+	@Test
+	public void test04Vetor() {
+		System.out.println("Verificar por Vetor");
+		Pais[] vetor = PaisDAO.Vetor();
+		for (Pais pais : vetor) {
+			System.out.println(pais);
+		}
+	}
+
+
+
+
+
+}

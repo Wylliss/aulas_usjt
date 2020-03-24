@@ -1,0 +1,5 @@
+package aul3;
+
+public class Singleton {
+
+}

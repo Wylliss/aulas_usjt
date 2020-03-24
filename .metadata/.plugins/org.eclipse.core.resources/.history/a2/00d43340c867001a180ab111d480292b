@@ -1,0 +1,40 @@
+package othermethod;
+
+import java.sql.ResultSet;
+
+public class ConexaoTeste {
+
+	public static void main ( String [] args) {
+
+//		Conexao con = new Conexao () ;
+//		String sql = "INSERT INTO `pais` (`nome`,`populacao`,`area`) VALUES ('NovoTeste',201032714,8515049)";
+//
+//		int res = con.executaSQL(sql);
+//		if ( res > 0 ) {
+//			System.out.println("Cadastro com sucesso");
+//		}
+//		else {
+//			System.out.println("Erro durante o cadastro");
+//		}
+
+		
+		Conexao con2 = new Conexao () ;
+		String sql2 =  "Select * from pais";
+		ResultSet rs2 = con2.executaBusca(sql2);
+
+		try {
+			while (rs2.next ()) {
+				int id = rs2.getInt("id");
+				String nome = rs2.getString("nome");
+				long populacao = rs2.getLong("populao");
+				double area = rs2.getDouble("area");
+				System.out.println(id+ " - " +nome+ " - " +populacao+ " - " +area );
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+}

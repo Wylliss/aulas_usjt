@@ -1,0 +1,7 @@
+package aula1;
+
+public class Volume {
+
+	public abstract double volume();
+	
+}

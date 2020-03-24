@@ -1,0 +1,21 @@
+package othermethod;
+
+import java.sql.DriverManager;
+
+public class Conexao {
+		
+	Conexao (){
+			
+			
+		try { 
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			DriverManager.getConnection("jdbc:mysql://localhost/aulasusjt?user=alunos&password=alunos&useTimezone=true&serverTimezone=UTC");
+			System.out.println("Conexão realizada com sucesso!!!");
+					
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	
+	}
+}

@@ -1,0 +1,36 @@
+package aula1;
+
+
+public class Trapezio extends Figura{
+
+	double baseMaior;
+	double base;
+	double altura;
+
+	public Trapezio(double baseMaior, double base, double altura) {
+		this.base = base;
+		this.altura = altura;
+		this.baseMaior = baseMaior;
+
+	}
+
+
+	public double area() {			
+
+		return (((baseMaior+base)/2) * altura) ;
+	}
+
+
+	public double perimetro() {
+		// TODO Auto-generated method stub
+		return baseMaior + base + altura + altura;
+	}
+
+	
+	public String toString() {			
+		return "******TRAPÉZIO******"
+			   +"\n Área: " + area()
+			   +"\n Perímetro:" + (perimetro())
+			   +"\n";
+	}
+}

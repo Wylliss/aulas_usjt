@@ -1,0 +1,67 @@
+package entr2;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
+public class PaisTest {
+	Pais pais, copia;
+	static int id = 0;
+
+	/*
+	 * Antes de rodar este teste, certifique-se que nao ha no banco nenhuma
+	 * linha com o id igual ao do escolhido para o to instanciado abaixo. Se
+	 * houver, delete. 
+	 * Certifique-se também que sobrecarregou o equals na classe
+	 * Cliente. 
+	 * Certifique-se que a fixture cliente1 foi criada no banco.
+	 * Além disso, a ordem de execução dos testes é importante; por
+	 * isso a anotação FixMethodOrder logo acima do nome desta classe
+	 */
+
+		
+	
+	@Test
+	public void test00Criar() {
+		System.out.println("Inserir Pais");
+		Pais pais = new Pais(0, "Espanha", 46524943L, 504030.0);
+		PaisDAO.criar(pais);
+		System.out.println("Pais Inserido com sucesso");
+	}
+	
+	@Test
+	public void test01Carregar() {
+		System.out.println("carregar Pais");
+		System.out.println(PaisDAO.carregar(1));
+	}
+
+
+	@Test
+	public void test02Atualizar() {
+		System.out.println();	
+	}
+	
+	
+//	@Test
+//	public void test03Excluir() {
+//		System.out.println("excluir");		
+//		PaisDAO.excluir(pais);
+//	}
+
+	
+	@Test
+	public void test05Vetor() {
+		System.out.println("Verificar por Vetor");
+		Pais[] vetor = PaisDAO.Vetor();
+		for (Pais pais : vetor) {
+			System.out.println(pais);
+		}
+	}
+
+
+
+
+
+}

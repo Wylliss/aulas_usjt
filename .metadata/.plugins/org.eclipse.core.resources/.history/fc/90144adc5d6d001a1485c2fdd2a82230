@@ -1,0 +1,9 @@
+package entr1;
+
+public interface Diagonal {
+
+	public abstract double calcDiagonal();
+
+
+}
+

@@ -1,0 +1,7 @@
+package entrega2_WebPais;
+
+public class Incremental {
+	private static int count = 0;
+	
+
+}

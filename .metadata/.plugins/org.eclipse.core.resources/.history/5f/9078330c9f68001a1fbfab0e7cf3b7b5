@@ -1,0 +1,11 @@
+package aul3;
+
+
+public class SingletonTest {
+	public static void main (String [] args) {
+		Singleton sing = Singleton.getInstance();
+		Singleton sing2 = Singleton.getInstance();
+		System.out.println(sing.equals(sing2));
+	}
+
+}
