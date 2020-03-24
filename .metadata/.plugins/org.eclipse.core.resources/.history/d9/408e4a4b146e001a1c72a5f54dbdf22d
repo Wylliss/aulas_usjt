@@ -19,6 +19,12 @@ public class TesteImpressao {
 
 		case 1:
 			imprime2.escreve();
+		
 		}
+
 	}
+
+
+
+
 }
