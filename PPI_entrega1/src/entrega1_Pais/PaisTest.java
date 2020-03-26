@@ -1,60 +1,70 @@
 package entrega1_Pais;
 
-import org.junit.FixMethodOrder;
+import org.junit.FixMethodOrder; 
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class PaisTest {
-	Pais pais, copia;
-	static int id = 0;
 
+	@Test
+	public void test00Carregar() {
+		System.out.println("Carregar país");
+		System.out.println(PaisDAO.carregar(1));
+		System.out.println(PaisDAO.carregar(2));
+		System.out.println(PaisDAO.carregar(3));
+		System.out.println(PaisDAO.carregar(4));
+		System.out.println(PaisDAO.carregar(5));
+		System.out.println("--------------------------------------------------------------------------------------------");
+	}
 
 	@Test
 	public void test01Criar() {
-		System.out.println("Inserir novo país");
-		Pais pais = new Pais(0, "Espanha", 46524943L, 504030.0);
-		PaisDAO.criar(pais);
-		System.out.println("País Inserido com sucesso\n");
+		System.out.println("Criar país");
+		PaisDAO.criar(6, "EUA", 185524943L, 97354080);
+		System.out.println(PaisDAO.carregar(6));
+		System.out.println("--------------------------------------------------------------------------------------------");
 	}
 
 	@Test
-	public void test02Carregar() {
-		System.out.println("carregar país com id 1");
-		System.out.println(PaisDAO.carregar(1) +"\n");
+	public void test02Atualizar() {
+		System.out.println("Atualizar país");
+		PaisDAO.atualizar(6, "EUA", 000000001L, 97354080);
+		System.out.println(PaisDAO.carregar(6));
+		System.out.println("--------------------------------------------------------------------------------------------");
 	}
-
 
 	@Test
 	public void test03Excluir() {
-		System.out.println("excluir país com id 1");	
-		PaisDAO.excluir(10);		
-		System.out.println("exclusão de país realizada com sucesso\n");
+		System.out.println("Excluir país");
+		PaisDAO.excluir(6);
+		System.out.println(PaisDAO.carregar(6));
+		System.out.println("--------------------------------------------------------------------------------------------");
 	}
 
-
 	@Test
-	public void test04Vetor() {
-		System.out.println("Verificar 3 primeiros países da tabela por Vetor");
+	public void test04PaisMaisHab() {
+		System.out.println("Buscar o país mais habitado");
+		System.out.println(PaisDAO.buscaPaisMaisHab());
+		System.out.println("--------------------------------------------------------------------------------------------");
+	}
+	
+	@Test
+	public void test05PaisMenor() {
+		System.out.println("Buscar o país com menor área");
+		System.out.println(PaisDAO.buscaPaisMenor());
+		System.out.println("--------------------------------------------------------------------------------------------");
+	}
+	
+	@Test
+	public void test06Vetor() {
+		System.out.println("Vetor 3 países");
 		Pais[] vetor = PaisDAO.Vetor();
 		for (Pais pais : vetor) {
-			System.out.println(pais + "\n");
+			System.out.println(pais);
 		}
+		System.out.println("--------------------------------------------------------------------------------------------");
 	}
-	@Test
-	public void test05areaMenor() {		
-		System.out.println("Verificar país com menor area");
-		System.out.println(PaisDAO.areaMenor() +"\n");
-		
-	}
-	
-	@Test
-	public void test06maiorPopulacao() {		
-		System.out.println("Verificar país com maior Populacao");
-		System.out.println(PaisDAO.maiorPopulacao() +"\n");
-	}
-	
 }
-
-

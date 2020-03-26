@@ -22,36 +22,36 @@ public class Pais {
 		this.area = area;
 	}
 	
-	public int getIdPais() {
+	public int getId() {
 		return id;
 	}
 
-	public void setIdPais(int idPais) {
-		this.id = idPais;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getNomePais() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNomePais(String nomePais) {
-		this.nome = nomePais;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public long getPopulacaoPais() {
+	public long getPopulacao() {
 		return populacao;
 	}
 
-	public void setPopulacaoPais(long populacaoPais) {
-		this.populacao = populacaoPais;
+	public void setPopulacao(long populacao) {
+		this.populacao = populacao;
 	}
 
-	public double getAreaPais() {
+	public double getArea() {
 		return area;
 	}
 
-	public void setAreaPais(double areaPais) {
-		this.area = areaPais;
+	public void setArea(double area) {
+		this.area = area;
 	}
 	
 }
