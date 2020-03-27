@@ -1,6 +1,6 @@
 package dao;
 
-import model.Pais; 
+import model.Pais;  
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

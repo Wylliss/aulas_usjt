@@ -45,8 +45,8 @@ public class ManterPaisController extends HttpServlet {
 		
 		//instanciar o service
 		PaisService cs = new PaisService();
-		int id = cs.criar(pais);
-		pais = cs.carregar(id);
+		cs.criar(pais);
+		pais = cs.carregar(pais.getId());
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html><head><title>PaisCadastrado</title></head><body>");
