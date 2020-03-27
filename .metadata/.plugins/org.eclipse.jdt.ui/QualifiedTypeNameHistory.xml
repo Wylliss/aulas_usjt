@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="zbytebank.Gerente"/>
+    <fullyQualifiedTypeName name="Contas.ContaCorrente"/>
+    <fullyQualifiedTypeName name="Contas.ContaPoupanca"/>
+    <fullyQualifiedTypeName name="Funcionarios.Funcionario"/>
+    <fullyQualifiedTypeName name="Funcionarios.AutenticacaoUtil"/>
+    <fullyQualifiedTypeName name="Contas.SeguroDeVida"/>
+    <fullyQualifiedTypeName name="Contas.CalcularImposto"/>
+</qualifiedTypeNameHistroy>

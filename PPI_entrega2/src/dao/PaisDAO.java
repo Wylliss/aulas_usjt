@@ -9,8 +9,7 @@ import java.sql.Connection;
 
 public class PaisDAO {
 	public static int criar(int id, String nome, long populacao, double area) {
-	//int id = 0;
-		String sqlInsert = "INSERT INTO pais(id, nome, populacao, area) VALUES (?, ?, ?, ?)";
+			String sqlInsert = "INSERT INTO pais(id, nome, populacao, area) VALUES (?, ?, ?, ?)";
 		// usando o try with resources do Java 7, que fecha o que abriu		
 			try (Connection conn = ConnectionFactory.obtemConexao();
 					PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
