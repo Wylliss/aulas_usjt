@@ -37,15 +37,12 @@ public class ManterPaisController extends HttpServlet {
 		PaisService cs = new PaisService();
 		cs.criar(pais);
 		pais = cs.carregar(pais.getId());
-		
-
-				
+					
 		//enviar para o jsp
 		request.setAttribute("Pais", pais);
 
 		RequestDispatcher view = request.getRequestDispatcher("Pais.jsp");
 		view.forward(request, response);
-		
-	}
-
+	
+		}
 }
