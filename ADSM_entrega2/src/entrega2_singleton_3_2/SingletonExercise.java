@@ -1,4 +1,4 @@
-package entrega2_singleton;
+package entrega2_singleton_3_2;
 
 public class SingletonExercise {
 

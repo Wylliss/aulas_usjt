@@ -20,14 +20,13 @@ INDEX VERSION 1.131+C:\Área de Trabalho\PROJETOS_GIT\.metadata\.plugins\org.ecli
 4096451289.index
 2657931604.index
 2506961061.index
-230353577.index
 2337681795.index
 3316162657.index
 1050170671.index
-282999124.index
+2406841696.index
 3993604266.index
 58729156.index
-2406841696.index
+282999124.index
 624891581.index
 3957274412.index
 2494806803.index
