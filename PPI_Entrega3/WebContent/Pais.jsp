@@ -8,7 +8,7 @@
 <title>Pais</title>
 </head>
 <body>
-	<%Pais pais = (Pais)request.getAttribute("pais"); %>
+	<%Pais pais = (Pais)request.getAttribute("Pais"); %>
 	Id: <%=pais.getId() %><br>
 	Nome: <%=pais.getNome() %><br>
 	Populacao: <%=pais.getPopulacao() %><br>
