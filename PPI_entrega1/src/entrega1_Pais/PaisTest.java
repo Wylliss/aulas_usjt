@@ -1,8 +1,10 @@
 package entrega1_Pais;
 
-import org.junit.FixMethodOrder; 
+
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -41,6 +43,7 @@ public class PaisTest {
 		System.out.println("Excluir país");
 		PaisDAO.excluir(6);
 		System.out.println(PaisDAO.carregar(6));
+		System.out.println("excluso com sucesso");
 		System.out.println("--------------------------------------------------------------------------------------------");
 	}
 
