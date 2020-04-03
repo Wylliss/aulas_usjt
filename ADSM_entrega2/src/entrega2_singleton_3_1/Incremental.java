@@ -1,21 +1,25 @@
 package entrega2_singleton_3_1;
 
-public class Incremental {	
-	private static Incremental singleton = null;
-	private static int count = 0;
-	private int numero;
+public class Incremental {
 
-	private Incremental() {
+	private static int count = 0; 
+	private int numero;
+	private static Incremental inc;
+	
+	private Incremental() { 
+		
 		numero = ++count;
 	}
-
-	static synchronized  Incremental getInstance() {
-		if(singleton ==null) {
-			singleton = new Incremental();}
-		return singleton;
+	
+	public static Incremental getInstance() {
+		if(inc==null) {
+			inc = new Incremental();
+		}
+		return inc;
 	}
+	
 
 	public String toString() {
-		return "Incrementando: " + numero;
+		return "Incremental " + numero; 
 	}
 }
