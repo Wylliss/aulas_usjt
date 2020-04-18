@@ -1,4 +1,4 @@
-package exercicio_9_1;
+package entrega4_chain_of_responsability_9_1;
 
 
 public class Slot5 implements Slot{

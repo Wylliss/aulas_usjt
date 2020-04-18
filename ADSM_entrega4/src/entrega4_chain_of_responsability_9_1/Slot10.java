@@ -1,18 +1,18 @@
-package exercicio_9_1;
+package entrega4_chain_of_responsability_9_1;
 
 
-public class Slot50 implements Slot{
+public class Slot10 implements Slot{
 
 	private Slot slot;
 	
-	public Slot50() {
+	public Slot10() {
 	};
 	
 	@Override
 	public double recebeMoeda(int moeda) {
-		if (moeda == 50) {
-			System.out.println("-- Recebeu  R$0,50");
-			return 0.5;
+		if (moeda == 10) {
+			System.out.println("-- Recebeu  R$0,10");
+			return 0.1;
 		}else {
 			return this.slot.recebeMoeda(moeda);
 		}	
@@ -23,6 +23,5 @@ public class Slot50 implements Slot{
 		this.slot = s;
 		
 	}
-
 
 }
