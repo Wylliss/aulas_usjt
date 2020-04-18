@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
-	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Área de Trabalho\PROJETOS_GIT\.git"/>
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="1"/>
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Área de Trabalho\ConsulTempo\.git"/>
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/Wylliss/ConsulTempo"/>
+		<item value="file:///C:\Users\willy\git\ConsulTempo-master"/>
+		<item value="file:///C:\Área de Trabalho\ConsulTempo-master"/>
+	</list>
 	<section name="GitImportWizard">
 		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
 	</section>

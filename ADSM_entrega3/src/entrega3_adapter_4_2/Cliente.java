@@ -1,4 +1,4 @@
-package entrega3_adapter_4_1;
+package entrega3_adapter_4_2;
 
 public class Cliente {
 	private SomadorEsperado somador;
