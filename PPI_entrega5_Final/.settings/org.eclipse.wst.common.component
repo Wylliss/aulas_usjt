@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="PPI_entrega5">
+        
+    <wb-module deploy-name="PPI_entrega5_Final">
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="PPI_entrega5"/>
-        <property name="java-output-path" value="/PPI_entrega5/build/classes"/>
+                
+        <property name="java-output-path" value="/PPI_entrega5_Final/build/classes"/>
+        <property name="context-root" value="PPI_entrega5_Final"/>
+            
     </wb-module>
+    
 </project-modules>
