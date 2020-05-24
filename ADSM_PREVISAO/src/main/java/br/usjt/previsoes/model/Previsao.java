@@ -20,9 +20,9 @@ public class Previsao implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String diasemana;
-	private int tempmin;
-	private int tempmax;
+	private String diadasemana;
+	private int temperaturaminima;
+	private int temperaturamaxima;
 	private int umidade;
 	private Date data;
 	private int latitude;
