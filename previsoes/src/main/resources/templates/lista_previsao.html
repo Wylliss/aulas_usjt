@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Previsão</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Previsão</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Dia da Semana</th>
+						<th>Máxima</th>
+						<th>Minima</th>
+						<th>Umidade (%)</th>
+						<th>Data / hora</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+						<th>Descricao</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="previsao : ${previsao}">
+						<td th:text="${previsao.cidade.cidade}"></td>
+						<td th:text="${previsao.diadasemana.diadasemana}"></td>
+						<td th:text="${previsao.tempmax}"></td>
+						<td th:text="${previsao.tempmin}"></td>
+						<td th:text="${previsao.umidade}"></td>
+						<td th:text="${previsao.data}"></td>
+						<td th:text="${previsao.cidade.latitude}"></td>
+						<td th:text="${previsao.cidade.longitude}"></td>
+						<td th:text="${previsao.descricao}"></td>
+					</tr>
+				</tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

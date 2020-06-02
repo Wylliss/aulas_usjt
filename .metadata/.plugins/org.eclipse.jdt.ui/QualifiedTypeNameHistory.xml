@@ -40,4 +40,7 @@
     <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="br.usjt.previsoes.repository.PrevisaoRepository"/>
+    <fullyQualifiedTypeName name="br.usjt.previsoes.model.Previsao"/>
 </qualifiedTypeNameHistroy>
